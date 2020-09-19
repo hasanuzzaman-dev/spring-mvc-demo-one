@@ -18,8 +18,6 @@ public class HomeController {
     @RequestMapping("add")
     public String add(@RequestParam("num1") int i, @RequestParam("num2") int j, HttpSession session){
 
-
-
         int result = i + j;
 
         session.setAttribute("result",result);
