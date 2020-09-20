@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class HomeController {
 
+    //ModelAttribute at Method level
     @ModelAttribute
     public void modelData(Model model){
         model.addAttribute("name", "Aliens");
