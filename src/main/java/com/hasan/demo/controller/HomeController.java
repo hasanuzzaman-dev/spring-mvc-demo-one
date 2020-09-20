@@ -15,6 +15,11 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class HomeController {
 
+    @ModelAttribute
+    public void modelData(Model model){
+        model.addAttribute("name", "Aliens");
+    }
+
     @RequestMapping("/")
     public String home() {
         return "home";
