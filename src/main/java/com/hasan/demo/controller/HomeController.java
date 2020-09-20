@@ -44,11 +44,17 @@ public class HomeController {
     }*/
 
     // Use of ModelAttribute with Model
-    @RequestMapping("addAlien")
+    /*@RequestMapping("addAlien")
     public String addAlien(@ModelAttribute Alien alien, Model model){
 
         model.addAttribute("alien",alien);
 
+        return "result";
+    }*/
+
+    // Use of ModelAttribute without Model
+    @RequestMapping("addAlien")
+    public String addAlien(@ModelAttribute("a1") Alien a){
         return "result";
     }
 }
