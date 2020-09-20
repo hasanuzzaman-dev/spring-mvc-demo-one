@@ -1,5 +1,6 @@
 package com.hasan.demo.controller;
 
+import com.hasan.demo.model.Alien;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -19,10 +20,22 @@ public class HomeController {
     }
 
     @RequestMapping("add")
-    public String add(@RequestParam("num1") int i, @RequestParam("num2") int j, ModelMap model) {
+    public String add(@RequestParam("num1") int i, @RequestParam("num2") int j, Model model) {
 
         int result = i + j;
         model.addAttribute("result", result);
+
+        return "result";
+    }
+
+    @RequestMapping("addAlien")
+    public String addAlien(@RequestParam("aid") int aid, @RequestParam("name") String name, Model model){
+
+        Alien alien = new Alien();
+        alien.setAid(aid);
+        alien.setName(name);
+
+        model.addAttribute("alien",alien);
 
         return "result";
     }
