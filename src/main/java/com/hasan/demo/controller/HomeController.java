@@ -4,10 +4,7 @@ import com.hasan.demo.model.Alien;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -74,7 +71,13 @@ public class HomeController {
     }*/
 
     //POST Method using RequestMapping
-    @RequestMapping(value = "addAlien", method = RequestMethod.POST)
+    /*@RequestMapping(value = "addAlien", method = RequestMethod.POST)
+    public String addAlien(@ModelAttribute("alien") Alien alien){
+        return "result";
+    }*/
+
+    //GetMapping
+    @GetMapping(value = "addAlien")
     public String addAlien(@ModelAttribute("alien") Alien alien){
         return "result";
     }
