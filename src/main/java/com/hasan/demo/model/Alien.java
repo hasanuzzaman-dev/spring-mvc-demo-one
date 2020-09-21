@@ -5,6 +5,11 @@ public class Alien {
     private int aid;
     private String name;
 
+    public Alien(int aid, String name) {
+        this.aid = aid;
+        this.name = name;
+    }
+
     public int getAid() {
         return aid;
     }

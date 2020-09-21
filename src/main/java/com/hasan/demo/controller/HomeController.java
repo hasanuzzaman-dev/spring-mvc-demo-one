@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class HomeController {
@@ -76,9 +78,21 @@ public class HomeController {
         return "result";
     }*/
 
-    //GetMapping
-    @GetMapping(value = "addAlien")
+    //PostMapping
+    @PostMapping(value = "addAlien")
     public String addAlien(@ModelAttribute("alien") Alien alien){
         return "result";
+    }
+    @GetMapping("getAliens")
+    public String getAliens(Model model){
+        List<Alien> aliens = Arrays.asList(
+                new Alien(101,"Hasan"),
+                new Alien(102, "Shakil"),
+                new Alien(103, "Jashim")
+        );
+
+        model.addAttribute("result",aliens);
+
+        return "showAliens";
     }
 }
