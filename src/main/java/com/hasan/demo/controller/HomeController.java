@@ -65,9 +65,16 @@ public class HomeController {
         return "result";
     }*/
 
-    // GET or POST Method
+    ////////////// GET or POST Method   ///////////////
 
-    @RequestMapping(value = "addAlien", method = RequestMethod.GET)
+    //Get Method using RequestMapping
+    /*@RequestMapping(value = "addAlien", method = RequestMethod.GET)
+    public String addAlien(@ModelAttribute("alien") Alien alien){
+        return "result";
+    }*/
+
+    //POST Method using RequestMapping
+    @RequestMapping(value = "addAlien", method = RequestMethod.POST)
     public String addAlien(@ModelAttribute("alien") Alien alien){
         return "result";
     }
